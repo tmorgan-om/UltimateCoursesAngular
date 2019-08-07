@@ -1,0 +1,17 @@
+<li [ngSwitch]="editing">
+  <div *ngSwitchCase="false">
+    <span class="status" [class.checked-in]="checkedIn(passenger)"></span>
+    {{passenger.name}}
+  </div>
+  <div *ngSwitchCase="true">
+    <input type="text"
+           [value]="passenger.name"
+           (input)="onNameChange(name.value)"
+           #name />
+  </div>
+  <div>
+    <button (click)="toggleEdit()">{{ editing ? "Done" : "Edit" }}</button>
+    <button (click)="onRemove()">Remove</button>
+    <button (click)="goToPassenger()">View</button>
+  </div>
+</li>

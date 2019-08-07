@@ -1,0 +1,34 @@
+{
+  "passengers": [
+    {
+      "id": 1,
+      "name": "Rachel",
+      "checkedInDate": "2019-08-23",
+      "baggage": "stuffy"
+    },
+    {
+      "id": 2,
+      "name": "Tim",
+      "checkedInDate": 1234567890000,
+      "baggage": "hand-hold"
+    },
+    {
+      "id": 3,
+      "name": "Beary Bear (bad bear)",
+      "checkedInDate": null,
+      "baggage": null
+    },
+    {
+      "id": 4,
+      "name": "Blue Bear",
+      "checkedInDate": "2019-08-29",
+      "baggage": null
+    },
+    {
+      "id": 5,
+      "name": "Llama",
+      "checkedInDate": "2019-08-01",
+      "baggage": null
+    }
+  ]
+}

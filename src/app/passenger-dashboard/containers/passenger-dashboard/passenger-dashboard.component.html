@@ -1,0 +1,10 @@
+<div>
+  <passenger-count [passengers]="passengers"></passenger-count>
+  <ul>
+    <passenger-detail *ngFor="let passenger of passengers"
+                      [passenger]="passenger"
+                      (view)="handleView($event)"
+                      (edit)="handleEdit($event)"
+                      (remove)="handleRemove($event)"></passenger-detail>
+  </ul>
+</div>

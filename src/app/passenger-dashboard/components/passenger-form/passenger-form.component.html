@@ -1,0 +1,35 @@
+<form #form="ngForm" novalidate (ngSubmit)="handleSubmit(form.value, form.valid)">
+  <div>Passenger name: <input type="text"
+                              name="name"
+                              required
+                              #nameField="ngModel"
+                              [ngModel]="passenger?.name" />
+    <p *ngIf="nameField.dirty && nameField.errors?.required" class="error">Name is required</p>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox"
+             name="checkedIn"
+             [ngModel]="checkedIn"
+             (ngModelChange)="checkedInChanged($event)">
+      Checked in
+    </label>
+  </div>
+
+  <div *ngIf="form.value.checkedIn">
+    Check in date: <input type="date"
+                          name="checkedInDate"
+                          [ngModel]="passenger?.checkedInDate" />
+  </div>
+
+  <div>
+    <label>Luggage:</label>
+    <select name="baggage" [ngModel]="passenger?.baggage">
+      <option *ngFor="let item of baggage"
+              [ngValue]="item.key">{{item.value}}</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
